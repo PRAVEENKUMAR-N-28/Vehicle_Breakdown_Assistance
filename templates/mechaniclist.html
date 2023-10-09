@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Onroad Breakdown Assitance </title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="well">
+    <h1>Onroad Vehicle Breakdown Assitance Finder </h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RSA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{{ url_for('location') }}">Location</a></li>
+      <li><a href="{{ url_for('mechanic') }}">Mechanic</a></li>
+      <li><a href="{{ url_for('areamechanic') }}">Areawise Mechanic</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="{{url_for('index') }}"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+
+<div class="col-md-2"></div>
+<form action="{{ url_for('mechanic') }}" >
+  <div class="col-md-8" >
+
+      <h2 align="center">Location List</h2>
+<a href="{{ url_for('addmechanic') }}"><button type="button" class="btn btn-warning">Add Mechanic(+)</button> </a>
+    <table class="table table-bordered table-striped" >
+
+        <tr>
+
+            <th>Name</th>
+            <th>Address</th>
+            <th>Mobile No</th>
+            <th>Workshop Name</th>
+            <th>Location</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        {% for row in mech %}
+        <tr>
+            <td>{{ row.1}}</td>
+            <td>{{ row.2}}</td>
+            <td>{{ row.3}}</td>
+            <td>{{ row.4}}</td>
+            <td>{{ row.7}}</td>
+            <td><a href="{{ url_for("editmech",mid = row.0) }}"><button type="button" class="btn btn-success"> Edit</button></a></td>
+            <td><a href="{{url_for('mechdelete',id_mechdata = row.0) }}" ><button type="button" class="btn btn-danger"> Delete</button></a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+
+    </div>
+</form>
+</body>
+</html>
