@@ -1,0 +1,94 @@
+{
+  "intents": [
+    {
+      "tag": "Greting",
+      "patterns":[
+        "Hi",
+        "I NEED HELP",
+        "Help"
+      ],
+      "responses":[
+        "HI,I'm Onlinebot. What kind of Help you Need?"
+      ]
+
+    },   
+   
+   
+   
+   
+    {
+      "tag":"Find the machanic",
+      "patterns": [
+        "How to find mechanic",
+        "find Mechanic"
+      ],
+      "responses":[
+        "Fisrt you need to crate a/c and login to find mechanic or using the chatbot to find mechanic(ENTER LOCATION CODE)"
+      ]
+    },
+
+    {
+      "tag": "Location",
+      "patterns":[
+        "location code",
+        "location",
+        "code for location"
+      ],
+      "responses":[
+        "1- Tiruppur || 2-Palladam || 3-Sulur"
+      ]
+    },
+
+
+    {
+      "tag": "Tiruppur",
+      "patterns":[
+        "tiruppur",
+        "1"
+      ],
+      "responses":[
+        "Ameer Workshop - 8754548745 || Best Auto Care - 9878546332 || Pon Motor Works - 9854541236 || Mechanic response('Yes or No')"
+      ]
+
+    },
+    
+    {
+      "tag": "Response(yes)",
+      "patterns":[
+        "Yes",
+        "yes responsed"
+      ],
+      "responses":[
+        "After compelet the service fill the  feedback form: https://bit.ly/40Qdtxs "
+      ]
+    },
+
+    {
+      "tag":"Response(No)",
+      "patterns":[
+        "No",
+        "No Response"
+      ],
+      "responses":[
+        "Contect Custmer care to book mechanic : +91 9865326598",
+        "Contect Custmer care to book mechanic : +91 9965326598",
+        "Contect Custmer care to book mechanic : +91 9765326598"
+      ]
+
+    },
+
+    {
+      "tag": "Palladam",
+      "patterns":[
+        "palladam",
+        "2"
+      ],
+      "responses":[
+        "Naidu two wheeler works & Alignment center - 7584565841 || response('Yes or No')"
+      ]
+    }
+  
+    
+    
+  ]
+}
